@@ -17,3 +17,11 @@
     // factorial(5) //➞ 120
     
     // factorial(13) //➞ 6227020800
+
+
+    // function factorial(num){
+    //   if (num <= 1) return 1;
+    //   return num * factorial(num - 1);
+    // }
+    
+    //factorial(8)

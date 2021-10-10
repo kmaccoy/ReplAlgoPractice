@@ -1,5 +1,5 @@
 # ReplAlgoPractice
-Algorithms saved from Repl moved over.
+Algorithm practice saved from Replit moved over to Github.
 
 
 TODO List:
