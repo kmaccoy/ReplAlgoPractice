@@ -1,13 +1,14 @@
 // Returns boolean of whether argument is classified as a Number object
 // isNumber(5); → true
 // isNumber('hi'); → false
+
+//check the typeof the value
+//default return false
+
 function isNumber(value) {
-  // CODE HERE
-  //check the typeof the value
   if(typeof value === 'number'){
     return true;
   }
-  //default return false
   return false;
 }
 
@@ -16,9 +17,11 @@ function isNumber(value) {
 // Returns boolean of whether argument is classified as an Array object
 // isArray(5); → false
 // isArray([1,2,3]); → true
+
+
+
+//return the output of the isArray method
 function isArray(value) {
-  // CODE HERE
-  //return the output of the isArray method
   return Array.isArray(value);
 }
 
@@ -28,8 +31,9 @@ function isArray(value) {
 // Returns boolean of whether argument is classified as an Object
 // isObject(5); → false
 // isObject([1,2,3]); → true
+
+
 function isObject(value) {
-  // CODE HERE
   if(typeof value === 'object'){
     return true;
   }
@@ -41,8 +45,9 @@ function isObject(value) {
 // return boolean of whether argument is classified as null
 // isNull(null); -> true
 // isNull(5); -> false
+
+
 function isNull(value) {
-  // CODE HERE
   if(!value){
     return true;
   }

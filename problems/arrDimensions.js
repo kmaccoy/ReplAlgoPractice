@@ -1,7 +1,8 @@
+//basecase, check if the array is even an array
+//if so iterate through the array, recursively reinvoke increasing current depth
+//return max depth when there is nowhere to go
+
 function arrDimensions(nestedArr, currentDepth = 1, maxDepth = 0) {
-  //basecase, check if the array is even an array
-  //if so iterate through the array, recursively reinvoke increasing current depth
-  //return max depth when there is nowhere to go
   if(Array.isArray(nestedArr)){
     maxDepth = (currentDepth > maxDepth) ? currentDepth : maxDepth;
 
@@ -12,7 +13,7 @@ function arrDimensions(nestedArr, currentDepth = 1, maxDepth = 0) {
     }
   }
   return maxDepth;
-}
+};
 
 // console.log(arrDimensions( [2, 5, 1] ))
 // console.log(arrDimensions( [2, [5], [3, [[16]]], 1] ))

@@ -19,16 +19,16 @@ function range(x, y){
 //console.log(range(2,9))
 
 //iterative way:
+//declare output array
+//iterate through where i starts at x and ends before y
+//push numbers to array
+//return array
 
 function iterateRange(x, y){
-  //declare output array
   let output = [];
-  //iterate through where i starts at x and ends before y
   for (let i = x+1; i < y; i++){
-    //push numbers to array
     output.push(i)
   }
-  //return array
   return output;
 }
 

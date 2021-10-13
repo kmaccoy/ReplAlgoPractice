@@ -9,18 +9,19 @@
   // Create a function that transforms a string of upvote counts into an array of numbers. Each k represents a thousand.Return the upvotes as an array.
   
   //Create a function that takes a string of upvotes (transformUpvotes) and returns an array of numbers.
+
+  // Use .split and .map methods to return out array.
+  // Declare variable to use parse method on. Coupled with float.
+  // Have anything with 'k' be plugged into a math operation, that multiples by 1000
+  // Return out product.
+
   function transformUpvotes(upvotes){
   
-    //Use .split and .map methods to return out array.
-    return upvotes.split(" ").map(callback => {
-    
-      // Declare variable to use parse method on. Coupled with float.
+    return upvotes.split(" ").map(callback => {   
       let parsed = parseFloat(callback);
-      // Have anything with 'k' be plugged into a math operation, that multiples by 1000
-      // Return out product.
       return callback.endsWith('k') ? parsed * 1000 : parsed;
-      })
-    }
+    })
+  }
     
     // Examples
     // transformUpvotes("6.8k 13.5k") //➞ [6800, 13500]

@@ -61,24 +61,25 @@
 // moves follow the rules of tic tac toe.
 
 
+//have a base case that checks if moves are less than 5
+//have that return out "pending" (5 moves base line for a win)
+//create a nested array that will serve as the board, use to reference the "moves" as the input is filled
+//track number of moves, if there is no winner and the number of moves is less than 9, pending will be logged, otherwise draw will be logged
+//fill out board with moves, divide input array into "A" and "B" (or "X" and "Y"), push respective values onto board array 
+//test if accumulator is odd / even concat respectively
+
 function ticTacCheck(moves){
-  //have a base case that checks if moves are less than 5
-  //have that return out "pending" (5 moves base line for a win)
   if(moves.length < 5){
     return 'Pending';
   };
   //board generation
-  //create a nested array that will serve as the board, use to reference the "moves" as the input is filled
-  //track number of moves, if there is no winner and the number of moves is less than 9, pending will be logged, otherwise draw will be logged
   let moveCount = 0;
   let board = moves.reduce(function(acc, cur, index){
     moveCount +=1;
     //console.log(acc)
     //console.log(cur)
     //console.log(index)
-    //fill out board with moves, divide input array into "A" and "B" (or "X" and "Y"), push respective values onto board array 
     if(index %2 === 0){
-      //test if accumulator is odd / even concat respectively
       acc[cur[0]][cur[1]] += `A`;
     } else {
       acc[cur[0]][cur[1]] += `B`;
@@ -114,15 +115,16 @@ function ticTacCheck(moves){
   }
   
   //check the board for matches
-    //iterate through each row
-      //check for horizont, verti, and diag matches
+  //iterate through each row
+  //check for horizont, verti, and diag matches
+  //eject out of loop if true otherwise row and column variables will be overwritten by a false case after a true has been hit
+
   let diag = checkDiag(board);
   let column = false;
   let row = false;
   for (let i=0; i<3; i++){
     column = checkCol(board, i);
     row = checkRow(board, i);
-    //eject out of loop if true otherwise row and column variables will be overwritten by a false case after a true has been hit
     if (row || column){
       i=3;
     }

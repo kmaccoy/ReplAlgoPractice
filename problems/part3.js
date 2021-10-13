@@ -8,11 +8,13 @@
 // }
 // forEach(['a','b','c'], callback); → prints a,0,['a','b','c'] b,1,['a','b','c'] c,2,['a','b','c']
 // For each element in the array, the callback we passed is called. The callback can be customized, but in the above example, the callback prints out the element, index, and entire array.
+
+
+//iterate through array
+//invoke callback function on each element of array
+
 function forEach(array, callback) {
-  // CODE HERE
-  //iterate through array
   for(let i = 0; i < array.length; i++){
-    //invoke callback function on each element of array
     callback(array[i], i, array);
   }
 }
@@ -29,14 +31,16 @@ const callback = function(element, index, array) {
 //  return element * 3;
 // }); -> [3,6,9]
 // BONUS: use the forEach method you use to create map
+
+
+//declare a result array, used to store results
+//iterate through array;
+//push results of iterations passed into callback function
+//return result array
+
 function map(array, callback) {
-  // CODE HERE
-  //declare a result array, used to store results
   let output = [];
-  //iterate through array;
-  //push results of iterations passed into callback function
   array.forEach(ele => output.push(callback(ele)));
-  //return result array
   return output;
 }
 
@@ -51,20 +55,22 @@ function map(array, callback) {
 // filter({a: 1, b: 2,c: 3,d: 4}, function(element, index, collection) {
 //  return element % 2 !== 0;
 // }); → [1,3]
+
+
+//declare an output array
+//iterate through array
+//pass each element through the callback function
+//if returned value is truthy, push to new array
+//return the output array
+
 function filter(collection, callback) {
-  // CODE HERE
-  //declare an output array
   let filtered = [];
-  //iterate through array
   for(let i = 0; i < collection.length; i++){
-    //pass each element through the callback function
-    //if returned value is truthy, push to new array
     if(callback(collection[i])){
       //console.log(callback(collection[i]))
       filtered.push(collection[i]);
     }
   }
-  //return the output array
   return filtered;
 }
 
@@ -84,35 +90,36 @@ function filter(collection, callback) {
 //  return value % 2 !== 0;
 // }); → {b:2, d:4}
 // Challenge: use filter
+
+//check if collection is an array or not
+//declare an empty array
+//iterate through array
+//check if the i'th element of collection is not a false return
+//push the i'th element into the array
+//return out the array
+//if the collection is not an array... 
+//for...in loop for the object
+//pass each key through callback func
+//delete the key, leave the value
+//return the collection
+
 function reject(collection, callback) {
-  // CODE HERE
-  //check if collection is an array or not
   if(Array.isArray(collection)){
-    //declare an empty array
     let rejects = [];
-    //iterate through array
     for(let i = 0; i < collection.length; i++){
-      //check if the i'th element of collection is not a false return
       if(!callback(collection[i])){
-        //push the i'th element into the array
         rejects.push(collection[i]);
         //console.log(rejects);
       }
     }
-    //return out the array
     return rejected;
   } else {
-  //if the collection is not an array... 
-  //for...in loop for the object
     for(let key in collection){
-      //pass each key through callback func
       if(callback(collection[key])){
-        //delete the key, leave the value
         delete collection[key];
         //console.log(collection);
       }
     }
-  //return the collection
   return collection;
   }
 }
@@ -127,33 +134,35 @@ function reject(collection, callback) {
 // Creates an array without duplicate values from the inputted array.
 // The order of the array is preserved.
 // uniq([1,2,1]); → [1,2]
+
+
+//declare an empty array to return out
+//iterare through array
+//push 0th element into the output array
+//declare bool var set to false
+//used for later checks
+//iterare through output array
+//check if the i'th and k'th elements are alike
+//reassign bool to true
+//if the element does not exist push to output array
+//return the output array
+
 function uniq(array) {
-  // CODE HERE
-  //declare an empty array to return out
   let uniques = [];
-  //iterare through array
   for(let i = 0; i < array.length; i++){
-    //push 0th element into the output array
     if(i === 0){
       uniques.push(array[i]);
     }
-  //declare bool var set to false
-  //used for later checks
   let isNotUnique = false;
-  //iterare through output array
   for(let k = 0; k < uniques.length; k++){
-    //check if the i'th and k'th elements are alike
     if(array[i] === uniques[k]){
-      //reassign bool to true
       isNotUnique =  true;
     }
   }
-  //if the element does not exist push to output array
   if(!isNotUnique){
     uniques.push(array[i]);
     }
   }
-  //return the output array
   return uniques;
 }
 
@@ -164,16 +173,18 @@ function uniq(array) {
 // DO NOT USE THE BUILT-IN INDEXOF function
 // indexOf([11,22,33], 11); → 0
 // indexOf([11,22,33], 5); → -1
+
+
+//iterate through array
+//check if current iteration matches the value arg
+//default case: return -1
+
 function indexOf(array, value) {
-  // CODE HERE
-  //iterate through array
   for(let i = 0; i < array.length; i++){
-    //check if current iteration matches the value arg
     if(array[i] === value){
       return i;
     }
   }
-  //default case: return -1
   return -1
 }
 
@@ -183,25 +194,26 @@ function indexOf(array, value) {
 
 // Returns a function that is restricted to invoking func once.
 // Repeat calls to the function return the value of the first call.
+
+//declare a bool that tracks if function has been run already
+//declare a result variable that will store the one time result
+//declare interior function that will only run one time
+//check if the bool has been run or not
+//if not, declare a variable assigned to the invocation of the callback function
+//reassign the boolean to reflect running once
+//elsewise return the cachedResult
+//return the inner function
+
 function once(func) {
-  // CODE HERE
-  //declare a bool that tracks if function has been run already
   let hasRun = false;
-  //declare a result variable that will store the one time result
   let cachedResult;
-  //declare interior function that will only run one time
   runOnlyOnce = () => {
-    //check if the bool has been run or not
     if(!hasRun){
-      //if not, declare a variable assigned to the invocation of the callback function
       cachedResult =  func();
-      //reassign the boolean to reflect running once
       hasRun = true;
     }
-    //elsewise return the cachedResult
     return cachedResult;
   }
-  //return the inner function
   return runOnlyOnce;
 }
 
@@ -213,32 +225,33 @@ function once(func) {
 // reduce([1,2], function(stored,current) {
 //  return stored + current;
 // },1); → 4
+
+//declare an accumulator value
+//check to catch if starter value is undefined
+//assign the accumulator to the 0'th element of array
+//iterate through array starting at 1'st index(accum is 0th)
+//reassign accumulator with evaluated result of the callback and ith element
+//return the accumulator
+//otherwise if there is a starter value...
+//set accumulator to starter
+//iterare through array at 0th index
+//reassign accumulator with evaluated result of the callback and ith element
+//return out accumulator
+
 function reduce(array, callback, start) {
-  // CODE HERE
-  //declare an accumulator value
   let acccumulator;
-  //check to catch if starter value is undefined
   if(start === undefined){
-    //assign the accumulator to the 0'th element of array
     accumulator = array[0];
     //console.log(accumulator);
-    //iterate through array starting at 1'st index(accum is 0th)
     for(let i = 1; i < array.length; i++){
-      //reassign accumulator with evaluated result of the callback and ith element
       accumulator = callback(accumulator, array[i]);
     }
-    //return the accumulator
     return accumulator;
   }
-  //otherwise if there is a starter value...
-  //set accumulator to starter
   accumulator = start;
-  //iterare through array at 0th index
   for(let i = 0; i < array.length; i++){
-    //reassign accumulator with evaluated result of the callback and ith element
     accumulator = callback(accumulator, array[i]);
   }
-  //return out accumulator
   return accumulator;
 }
 
@@ -260,18 +273,19 @@ function reduce(array, callback, start) {
 //   return elem % 2 == 0;
 // });  -> false
 // BONUS: use reduce in your answer
+
+//iterate through array
+//check if there is a false return from callback
+//return out false, end the function
+//default true return
+//only returns true if there are no false returns
+
 function every(array, func) {
-  // CODE HERE
-  //iterate through array
   for(let i = 0; i < array.length; i++){
-    //check if there is a false return from callback
     if(!func(array[i])){
-      //return out false, end the function
       return false;
     }
   }
-  //default true return
-  //only returns true if there are no false returns
   return true;
 }
 
@@ -286,17 +300,20 @@ function every(array, func) {
 
 // Flattens a nested array.
 // flatten([1, [2, 3, [4]]]); → [1, 2, 3, [4]]
+
+// CODE HERE
+//return the array, flatten on way out
+
 function flatten(array) {
-  // CODE HERE
-  //return the array, flatten on way out
   return array.flat();
 }
 //console.log(flatten([1, [2, 3, [4]]])); //→ [1, 2, 3, [4]]
 
-// Recursively flattens a nested array.
 // flattenDeep([1, [2, 3, [4]]]); → [1, 2, 3, 4]
+
+
+// Recursively flattens a nested array.
 function flattenDeep(array) {
-  // CODE HERE
   return array.reduce((flat, curr) => {
     // console.log(array);
     // console.log(curr);

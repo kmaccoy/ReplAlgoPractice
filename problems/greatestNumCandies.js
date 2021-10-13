@@ -8,10 +8,15 @@
   // For each kid check if there is a way to distribute extraCandies among the kids such that he or she can have the greatest number of candies among them. Notice that multiple kids can have the greatest number of candies.
   
   //Create a function, extraCandies, accept an array and a number
+  // If the array has a length less than 1, return [];
+  //Declare a variable, maxCandies and we're assign this to be the largest number in  the array of candies.
+  //Iterate through the candies array
+  //and at each element we're going to test to see if the element summed w/ the number is greater than or equal to the maxCandies.
+  //We will push this value into an array. 
+
+
   function extraCandies(candies, extraCandies){
-    // If the array has a length less than 1, return [];
     if(candies.length < 1) return [];
-    //Declare a variable, maxCandies and we're assign this to be the largest number in  the array of candies.
     const maxCandies = Math.max(...candies);
     
     const resultArr = []
@@ -20,14 +25,11 @@
         return (num  + extraCandies)>= maxCandies
       }
     
-    //Iterate through the candies array
       candies.map( ele => {
         return resultArr.push(test(ele));
       })
       
      
-      //and at each element we're going to test to see if the element summed w/ the number is greater than or equal to the maxCandies.
-        //We will push this value into an array. 
       return resultArr
     }
     

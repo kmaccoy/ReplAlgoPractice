@@ -12,34 +12,35 @@
   // Express both payments as integers.
   
   // Declare a function (billSplit) that accepts TWO arrays, one with the 'class' of dish, the other the prices.
+
+  // Delcare empty array 'myBill'
+  // Declare empty array 'friendBill'
+  // Basic for loop.
+  // Within, 'if' statement to break apart arrays.
+  // If 's', corresponding element from second array added to 'myBill'.
+  // Any 'n' elements and corresponding from second array added to 'friendBill'.
+  // Use reduce method to add up each array total.
+  // Return out both arrays as one array.
   
   function billSplit(foodArr, priceArr){
   
-    // Delcare empty array 'myBill'
     let myBill = []
-    // Declare empty array 'friendBill'
     let friendBill = []
   
-    // Basic for loop.
     for (let i = 0; i < foodArr.length; i++){
-    // Within, 'if' statement to break apart arrays.
     if(foodArr[i] === "S"){
-    // If 's', corresponding element from second array added to 'myBill'.
     myBill.push(priceArr[i])
     //console.log(priceArr[i])
     } else if(foodArr[i] === "N"){
-    //Any 'n' elements and corresponding from second array added to 'friendBill'.
     friendBill.push(priceArr[i]/2)
     myBill.push(priceArr[i]/2)
     // console.log(priceArr[i])
       }
     }
-  // Use reduce method to add up each array total.
   let myTotalBill = myBill.reduce((a,b) => (a+b));
   let myfriendTotalBill = friendBill.reduce((a,b) => (a+b));
   //console.log(myTotalBill)
   //console.log(myfriendTotalBill)
-  // Return out both arrays as one array.
   return [myTotalBill, myfriendTotalBill]
   }
   

@@ -1,10 +1,11 @@
 //Write a function that takes an object and returns a nested array. These inner arrays will each have two elements: the key-value pairs from the object. These whole array should be *SORTED* in alphabetical order by the key names.
 
+//Utilize map to identify the key-value pairs of the object, convert those pairs into the desired array
+//return the output array;
+//still need to sort by name...
+
 function objToSortedArray (obj) {
-  //Utilize map to identify the key-value pairs of the object, convert those pairs into the desired array
   let objectConverter = Object.keys(obj).map(key => ({ [key]: obj[key] }));
-  //return the output array;
-  //still need to sort by name...
   return objectConverter;
 }
 

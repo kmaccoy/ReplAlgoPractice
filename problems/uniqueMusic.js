@@ -13,13 +13,15 @@
    */
   
   //Delcare function that accepts one array as an argument.
+
+  //Outer for loop will split apart the "arr" array.
+  //Inner for loop will do the comparisons.
+
   function uniqueStyles(arr){
     const isUnique = []
-    //Outer for loop will split apart the "arr" array.
     for(let i = 0; i < arr.length; i++){
       let splitStyles = arr[i].split(',')
       //console.log(splitStyles)
-      //Inner for loop will do the comparisons.
       for(let j = 0; j < splitStyles.length; j++){
         if(isUnique.includes(splitStyles[j])){
           //console.log('There was something here.')

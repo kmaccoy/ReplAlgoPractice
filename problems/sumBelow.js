@@ -11,7 +11,6 @@ function sumBelow(n){
     //console.log(n)
     return n-1 + sumBelow(n - 1);
   }
-  
 };
 
 //console.log(sumBelow(10)) //45

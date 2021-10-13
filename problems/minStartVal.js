@@ -16,12 +16,13 @@ Explanation: If you choose startValue = 4, in the third iteration your step by s
                   (4 +2 ) = 6  | (5 +2 ) = 7    |   2
 */
 
+// sort the array to find the min;
+//short circuit case
+
 var minStartValue = function(nums) {
-  // sort the array to find the min;
   let startVal = 1;
   let trackval = 1;
   function arrLoop(arr, i=0){
-    //short circuit case
     if (arr[i]+trackVal<=0){
       i=arr.length;
     } else if (i >= arr.length){

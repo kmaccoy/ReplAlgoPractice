@@ -1,5 +1,6 @@
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
+
 function arraySum(array){
   //basecase
   if(array.length === 1){

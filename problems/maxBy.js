@@ -1,10 +1,11 @@
+//is Math.abs what we're supposed to assume is the callback???
+//iterate through the array
+//check if the current "max number" is > than the eval. result of passing current iteration
+// through the callback
+//if yes change
+//if not continue on
+
 function maxBy(arr, callback) {
-  //is Math.abs what we're supposed to assume is the callback???
-  //iterate through the array
-  //check if the current "max number" is > than the eval. result of passing current iteration
-  // through the callback
-  //if yes change
-  //if not continue on
   let max = -Infinity;
   for(let i = 0; i < arr.length; i++){
     console.log(arr[i])

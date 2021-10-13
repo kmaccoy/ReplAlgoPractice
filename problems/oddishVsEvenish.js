@@ -22,14 +22,14 @@ function oddishOrEvenish(num){
 
 // Examples
 
-oddishOrEvenish(4321) //➞ "Oddish"
+//oddishOrEvenish(4321) //➞ "Oddish"
 // 4 + 3 = 7
 // 7 % 2 = 1
 
-oddishOrEvenish(373) //➞ "Oddish"
+//oddishOrEvenish(373) //➞ "Oddish"
 // 3 + 7 + 3 = 13
 // 13 % 2 = 1
 
-oddishOrEvenish(4433) //➞ "Evenish"
+//oddishOrEvenish(4433) //➞ "Evenish"
 // 4 + 4 + 3 + 3 = 14
 // 14 % 2 = 0

@@ -87,27 +87,29 @@
   // ]))// ➞ false
   
   //Declare the function "isGoalScored" with the parameter "goal".
+  //Declare an initial "isGoal" boolean set to false. Will always return false unless conditionals are proven otherwise.
+  //Declare a for loop that runs runs for the length of the array (goal). 
+  //Can be any length / size goal instead of 3 of brute force method done prior.
+  //Use .toString method to make everything represent as a text value. 
+  //Use .split method to account for each line for closer inspection. Use .filter to account for whitespace.
+  //Declare ballIndex variable bound to .indexOf so the program looks for '0', AKA the ball.
+  //Declare if statement that continually looks for ball within the '#' goalposts on each line.
+  //If ball is found, goal is set to true.
+  //Accounting for infinite loop possibility.
+
   function isGoalScored(goal) {
-    //Declare an initial "isGoal" boolean set to false. Will always return false unless conditionals are proven otherwise.
     let isGoal = false
-    //Declare a for loop that runs runs for the length of the array (goal). Can be any length / size goal instead of 3 of brute force method done prior.
     for(let i = 0; i < goal.length; i++){
-      //Use .toString method to make everything represent as a text value. Use .split method to account for each line for closer inspection. Use .filter to account for whitespace.
       let arr = goal[i].toString().split('').filter(letter => letter !==' ')
-      //Declare ballIndex variable bound to .indexOf so the program looks for '0', AKA the ball.
       let ballIndex = arr.indexOf('0')
-      //Declare if statement that continually looks for ball within the '#' goalposts on each line.
       if(ballIndex !== -1){
         if((arr[ballIndex-1] === '#' && arr[ballIndex+1] === '#')
            && arr[ballIndex-2]!=='#' && arr[ballIndex+2]!=='#'
         ){
-          //If ball is found, goal is set to true.
           isGoal = true
-          //Accounting for infinite loop possibility.
           break;
         }
       }
     }
-    //Return isGoal.
     return isGoal
   }

@@ -7,18 +7,20 @@
   // Return the array in the form [x1,y1,x2,y2,...,xn,yn].
   
    // Creating a function w/ shuffle, that accepts an array and a number n. 
+
+   // We will slice the array intot two sub arrays, arr1 and arr2. with the median being n. 
+   //Iterate using a for loop, over the length of either subarray. And we will push the respective elements of each subarray into our new array, result. 
+   //Return result. 
+
    function shuffle(arr, n){
-    // We will slice the array intot two sub arrays, arr1 and arr2. with the median being n. 
    
    const arr1 = arr.slice(0,n);
    const arr2 = arr.slice(n, arr.length);
    
    const result =[];
-    //Iterate using a for loop, over the length of either subarray. And we will push the respective elements of each subarray into our new array, result. 
    for(let i = 0; i < arr1.length; i++){
-     result.push(arr1[i], arr2[i]);
-   }
-   //Return result. 
+      result.push(arr1[i], arr2[i]);
+    }
    return result;
    }
    

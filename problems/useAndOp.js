@@ -15,21 +15,23 @@
   // Make a function using the && operator.
   
   //Declare function trueFalse that accepts booleans
+
+  //Declare if statement that checks if true & true.
+  //Else, return false.
+
   function trueFalse(bool1, bool2){
-    //Declare if statement that checks if true & true.
-      if(bool1 && bool2 === true){
-        return true;
-      } else {
-        return false;
-      }
-    //Else, return false.
+    if(bool1 && bool2 === true){
+      return true;
+    } else {
+      return false;
     }
+  }
     
-    // Examples
-    //trueFalse(true, false) //➞ false
+  // Examples
+  //trueFalse(true, false) //➞ false
     
-    //trueFalse(true, true) //➞ true
+  //trueFalse(true, true) //➞ true
     
-    //trueFalse(false, true) //➞ false
+  //trueFalse(false, true) //➞ false
     
-    //trueFalse(false, false) //➞ false
+  //trueFalse(false, false) //➞ false

@@ -2,6 +2,7 @@
   // Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
   
   //Declare a function that accepts an array as an argument.
+  
   function sevenBoom(arr){
     if (arr.includes(7)){
       return 'Boom!'

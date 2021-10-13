@@ -3,21 +3,22 @@
   // Link: https://edabit.com/challenge/jFqttm7eFe8j4WMPu
   
   // create a funcion, isExact that accepts a potential upperbound of a factorial. 
-  function isExact(testFactorial){
+  //Set up a while loop that starts at 1, and continualy multiplies under the condition that the result is less than or equal to the potential upperbound. 
+  //If we've gone throgh all iterations and the pot. upperbound is not strictly equal to the returned value of the funcion, return the string, Not exact
+  //Else, return an array, with the upp. val and the factorial of upp. val. 
   
+  function isExact(testFactorial){
+    
     let upperBound = 1;
     let factorialNum = 1;
-  //Set up a while loop that starts at 1, and continualy multiplies under the condition that the result is less than or equal to the potential upperbound. 
-  while(upperBound < testFactorial){
-    console.log(upperBound, factorialNum)
-       factorialNum++;
-      upperBound *= factorialNum;
-  }
-  //If we've gone throgh all iterations and the pot. upperbound is not strictly equal to the returned value of the funcion, return the string, Not exact
-  if(upperBound !== testFactorial) return 'Not exact!'
-  
-  //Else, return an array, with the upp. val and the factorial of upp. val. 
-  return [upperBound, factorialNum]
+    while(upperBound < testFactorial){
+      console.log(upperBound, factorialNum)
+        factorialNum++;
+        upperBound *= factorialNum;
+    }
+    if(upperBound !== testFactorial) return 'Not exact!'
+    
+    return [upperBound, factorialNum]
   }
   // console.log(isExact(125))// 'Not Exact'
   // console.log(isExact(6))//[6,3]

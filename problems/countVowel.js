@@ -52,11 +52,17 @@
   // There will be at least two numbers in the array.
 
 
-    // How Many Vowels?
+  // How Many Vowels?
   // Create a function that takes a string and returns an object with the number (count) of each vowel contained within it
+  
+  //Create an object, objVowels, that will contain all the vowels as keys and all the values set to 0. 
+  //Iterate through the str's length
+  //If the current element of the str is a vowel,
+  //Increment the value within our objVowels
+  //Return our objVowels object
+
   function howManyVowels(word){
   
-    //Create an object, objVowels, that will contain all the vowels as keys and all the values set to 0. 
     const objVowels = {
       'a': 0,
       'e':0,
@@ -65,17 +71,13 @@
       'u':0,
     }
       
-    //Iterate through the str's length
     for(let letter of word.toLowerCase()){
-        //If the current element of the str is a vowel,
       if(letter in objVowels){
-        //Increment the value within our objVowels
         objVowels[letter]++;
       }
     }
-    //Return our objVowels object
       return objVowels
-    }
+  };
     // console.log(howManyVowels('Timeo3'))// {  'a': 0,
     // //   'e':1,
     // //   'i':1,

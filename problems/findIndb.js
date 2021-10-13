@@ -111,6 +111,7 @@ var watchList = [
     "Response": "True"
   }
 ];
+
 // /* 
 // The variable watchList holds an array of objects with information on several movies. Use reduce to find the average IMDB rating of the movies directed by Christopher Nolan. Recall from prior challenges how to filter data and map over it to pull what you need. You may need to create other variables, and return the average rating from getRating function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
 
@@ -120,12 +121,12 @@ var watchList = [
 //average the raitings
 //ratings are strings, convert to nums
 
+// Only change code below this line
+//declare empty array to hold imdb ratings
+//loop through objects with conditional looking for Chis Nol
 
 function getRating(watchList){
-  // Only change code below this line
   let averageRating = 0;
-  //declare empty array to hold imdb ratings
-    //loop through objects with conditional looking for Chis Nol
   const imdbOfChris = watchList.filter(function(obj){
     return obj.Director == `Christopher Nolan`
   }).map(function(obj){

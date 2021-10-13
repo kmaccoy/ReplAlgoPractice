@@ -2,14 +2,14 @@
   // Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
   
   //Declare a function (factorial) that accepts a number as an argument.
+  //Declare if statement that returns anything that is <= 1 as 1
+  //Declare a return that takes argument * the function factorial (num - 1)
   function factorial(num){
-    //Declare if statement that returns anything that is <= 1 as 1
     if (num <= 1){
       return 1;
     }
-    //Declare a return that takes argument * the function factorial (num - 1)
     return num * factorial(num -1);
-    }
+  }
     
     // Examples
     // factorial(3) //➞ 6
@@ -32,6 +32,8 @@
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
+
+
 function factorial(n) {
   //basecase
   if (n <= 1){

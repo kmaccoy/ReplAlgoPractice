@@ -3,16 +3,17 @@
   // Create a function to return the Nth number in the Fibonacci sequence as a string.
   // Examples
   
-  //Declare a function that takes a single number as an argument.
+  // Declare a function that takes a single number as an argument.
+  // Declare a test case that returns 1 for any parameter that is less than or equal to 1.
+  // Declare recusive statement that mirrors fibonacci sequence.
+
   function fibonacci(num){
-    //Declare a test case that returns 1 for any parameter that is less than or equal to 1.
     if(num <= 1){
       return 1
     } else {
-    //Declare recusive statement that mirrors fibonacci sequence.
       return fibonacci(num - 1) + fibonacci(num - 2)
-      }
     }
+  }
     
     //fibonacci(10) //➞ "55"
     

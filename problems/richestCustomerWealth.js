@@ -6,19 +6,21 @@
   // A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
   
   // function largestWealth(bankAccount){
+
+    //Declaring a value, largestAccount and assign it the value of the first element of the nested array.
+    //Iterate over the bankAccount nested arrays, 
+    //sum up all the values,
+    //Test to see if the that summation is greater than or equal to our current largestAccount val. If so, reassign it to this summation value. 
+    //Return largestAccount
+
     function largestWealth(bankAccount){
-      //Declaring a value, largestAccount and assign it the value of the first element of the nested array.
         let largestAccount = bankAccount[0][0];
-      //Iterate over the bankAccount nested arrays, 
         for(let account of bankAccount){
-          //sum up all the values,
           let test = account.reduce((a, b) => (a+b));
           if(test >= largestAccount) largestAccount = test;
-              //Test to see if the that summation is greater than or equal to our current largestAccount val. If so, reassign it to this summation value. 
         }
-      //Return largestAccount
           return largestAccount;
-      }
+    }
       // console.log(largestWealth([[1,2,3],[3,2,1]]))// 6
       // console.log(largestWealth([[1,2,3],[3,2,1], [1,2,0],[3,-1,1], [1,20,3],[6,2,1]]))// 24
       
@@ -35,12 +37,14 @@
       
       // Area of a Rectangle
       // Create a function that calculates the area of a rectangle. If the arguments are invalid, your function must return -1.
-      function rectangleArea(length, width){
       
       //Any input that are negative or are not integers/floats - return a statement saying invalid input. 
+      // Formula of a rectangle: Length * Width - return the e.result of this operation with both arguments. 
+
+      function rectangleArea(length, width){
+      
         if( Math.sign(length) === -1 || Math.sign(width) === -1 || typeof(length) != "number" || typeof(width) != "number") return -1;
       
-      // Formula of a rectangle: Length * Width - return the e.result of this operation with both arguments. 
         return length * width;
       }
       

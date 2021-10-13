@@ -4,19 +4,20 @@
 // this function accepts an array of numbers
 // and returns an array of only the odd numbers
 // ex: returnOdds([1,2,3,4,5,6,7]); -> [1,3,5,7]
+
+//create an output array
+//iterate through the array
+//check of % === 1
+//if so add to new array
+//return the array
+
 function returnOdds(array) {
-  // CODE HERE
-  //create an output array
   let output = [];
-  //iterate through the array
   for(let i = 0; i < array.length; i++){
-    //check of % === 1
     if(array[i] % 2 === 1){
-      //if so add to new array
       output.push(array[i]);
     }
   }
-  //return the array
   return output;
 }
 
@@ -25,20 +26,23 @@ function returnOdds(array) {
 // this function accepts an array of numbers
 // and returns an array of only the even numbers
 // ex: returnEvent([1,2,3,4,5,6,7]); -> [2,4,6]
+
+
+// CODE HERE
+//create an output array
+//iterate through the array
+//check of % === 0
+//if so add to new array
+//return the array
+
 function returnEvens(array) {
-  // CODE HERE
-  //create an output array
-    let outputEven = [];
-    //iterate through the array
-    for(let i = 0; i < array.length; i++){
-      //check of % === 0
-      if(array[i] % 2 === 0){
-        //if so add to new array
-        outputEven.push(array[i]);
-      }
+  let outputEven = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i] % 2 === 0){
+      outputEven.push(array[i]);
     }
-    //return the array
-    return outputEven;
+  }
+  return outputEven;
 }
 
 
@@ -46,9 +50,11 @@ function returnEvens(array) {
 
 // returns only the max element from the inputted array of numbers
 // ex: findMax([1,25,6,3]); -> 25
+
+
+//return the max of the spread variable
+
 function findMax(array) {
-  // CODE HERE
-  //return the max of the spread variable
   return Math.max(...array)
 }
 
@@ -58,8 +64,8 @@ function findMax(array) {
  * remove leading and trailing whitespace or specified characters from string
  * trim(' hello '); -> 'hello'
  */
+
 function trim(string) {
-  // CODE HERE
   return string.trim()
 }
 
@@ -76,65 +82,65 @@ function trim(string) {
 // the goal of this problem is to reverse engineer what array methods are actually doing and create an object that has those methods
 
 
+//declare index variable for tracking
+//implement push
+//add input element to end of array
+//create key / val pair at current objLeng
+//increment objLeng by 1
+//implement pop
+//remove last element, return said element
+//declare holder var at last key of obj
+//delete val from object
+//decrement objLeng by 1
+//return holder value - also deleted value from object
+//implement unshift
+//add a value to the beginning of array
+//increment objLeng
+//iterate through numbers from 0 to length
+//reassign key at index i to previous key's value.
+//exclude 0
+//get new element at 0'th key
+//implement shift
+//remove first element in array. return that element
+//declare placeholder var, assign to key 0
+//delete the key/val pair
+//decrement length of variable
+//iterate through keys, decrement them
+//delete the current objLength
+//return the placeholder
+
 function createArray() {
-  // CODE HERE
-  //declare index variable for tracking
   let objLeng = 0;
 
-  //implement push
-  //add input element to end of array
   createArray.prototype.push = function(element){
-    //create key / val pair at current objLeng
     this[objLeng] = element;
-    //increment objLeng by 1
     objLeng++;
   }
 
-  //implement pop
-  //remove last element, return said element
   createArray.prototype.pop = function(){
-    //declare holder var at last key of obj
     let poppedHold = this[objLeng -1];
-    //delete val from object
     delete this[objLeng -1];
-    //decrement objLeng by 1
     objLeng--;
-    //return holder value - also deleted value from object
     return poppedHold;
   }
 
-  //implement unshift
-  //add a value to the beginning of array
   createArray.prototype.unshift = function(element){
-    //increment objLeng
     objLeng++;
-    //iterate through numbers from 0 to length
     for(let i = objLeng - 1; i > 0; i--){
-      //reassign key at index i to previous key's value.
-      //exclude 0
       this[i] = this[i-1];
     }
-    //get new element at 0'th key
     this[0] = element
   }
 
-  //implement shift
-  //remove first element in array. return that element
   createArray.prototype.shift = function(){
-    //declare placeholder var, assign to key 0
     let shiftyHolder = this[0];
-    //delete the key/val pair
     delete this[0];
-    //decrement length of variable
     objLeng--;
-    //iterate through keys, decrement them
     for(let i = 0; i < objLeng; i++){
       this[i] = this[i + 1];
     }
-    //delete the current objLength
     delete this[objLeng];
 
-    //return the placeholder
     return shiftyHolder;
   }
 }
