@@ -10,7 +10,7 @@ TODO List:
 
 [√] 2. Find duplicates, combine them together
 
-[] 3. Clean up files.
+[√] 3. Clean up files.
 
 [] 4. Improve upon solutions.
 
