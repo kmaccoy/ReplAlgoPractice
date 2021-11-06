@@ -9,7 +9,7 @@
   function area(length, width){
     if(length <= 0 || width <= 0){
       return -1;
-      } else{
+      } else {
       return length * width;
     }
   };

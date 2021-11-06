@@ -17,3 +17,22 @@ function arrDimensions(nestedArr, currentDepth = 1, maxDepth = 0) {
 
 // console.log(arrDimensions( [2, 5, 1] ))
 // console.log(arrDimensions( [2, [5], [3, [[16]]], 1] ))
+
+//solution improvement
+
+const arrDims = (arrNest, currDepth = 1, maxDepth = 0) => {
+  if(Array.isArray(arrNest)){
+    maxDepth = (currDepth > maxDepth) ? currDepth : maxDepth;
+
+    for(let i = 0; i < arrNest.length; i++){
+      if(Array.isArray(arrNest[i])){
+        maxDepth = arrDims(arrNest[i], currDepth + 1, maxDepth);
+      }
+    }
+  }
+  return maxDepth;
+};
+
+console.log(arrDims( [2, [5], [3, [[16]]], 1]))
+
+

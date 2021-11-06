@@ -24,3 +24,19 @@
     // calculator(2, "*", 8) //➞ 4
     
     // calculator(4, "/", 2) ➞ 2
+
+
+    //convert to es6
+
+    const basicCalc = (num1, op, num2) => {
+      if(op === '+'){
+        return num1 + num2;
+      } else if(op === '-'){
+        return num1 - num2;
+      } else if(op === '*'){
+        return num1 * num2;
+      } else if(op === '/'){
+        return num1 / num2;
+      }
+      else return 'Could not calculate';
+    }

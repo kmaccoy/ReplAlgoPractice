@@ -26,3 +26,14 @@ function countTrue(array){
   // Notes
   // Return 0 if given an empty array.
   // All array items are of the type bool (true or false).
+
+  // convert to es6
+
+  const trueCount = arr => {
+    let counted = 0;
+
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i]) counted++;
+    }
+    return counted;
+  };

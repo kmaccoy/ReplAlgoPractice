@@ -15,3 +15,9 @@ function convert(mins){
   // convert(3) //➞ 180
   
   // convert(2) //➞ 120
+
+  //convert to es6
+
+  const convert = mins => {
+    return mins * 60;
+  }
