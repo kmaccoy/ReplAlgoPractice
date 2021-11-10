@@ -17,3 +17,12 @@ function isEven(n){
 // console.log(isEven(2)) //true
 // console.log(isEven(9)) //false
 // console.log(isEven(8)) // true
+
+//convert to es6, improve
+//check and see if number is 0, return true
+
+const isEven = n => {
+  if(n === 0) return true;
+  if(n % 2 === 0) return true;
+  return false;
+};

@@ -15,7 +15,18 @@ function arraySum(array){
   //console.log(sumArray);
   //recursive call
   return sumArray + arraySum(flatArray);
-}
+};
+
+//es6 conversion
+
+const arrSum = arr => {
+  if(arr.length === 1) return arr[0];
+
+  let flatArr = arr.flat();
+  let summedArr = 0 + flatArr.shift();
+
+  return summedArr + arrSum(flatArr);
+};
 
 //console.log(arraySum([1,[2,3],[[4]],5])); // 15
 //console.log(arraySum([1,[[2,3]],[4],5])) //15

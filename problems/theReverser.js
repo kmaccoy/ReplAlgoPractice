@@ -7,6 +7,12 @@
     return str.split("").reverse().join("");
 }
 
+//convert to es6
+
+const reverse = str => {
+  return str.split("").reverse().join("");
+}
+
 // reverse("Hello World") //➞ "dlroW olleH"
 
 // reverse("ReVeRsE") //➞ "EsReVeR"

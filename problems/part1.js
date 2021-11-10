@@ -18,12 +18,24 @@ function isNumber(value) {
 // isArray(5); → false
 // isArray([1,2,3]); → true
 
+//convert to es6
+
+const isNumber = val => {
+  if(typeof val === 'number') return true;
+  return false;
+};
+
 
 
 //return the output of the isArray method
 function isArray(value) {
   return Array.isArray(value);
 }
+
+//convert to es6
+const isArray = val => {
+  return Array.isArray(val);
+};
 
 // console.log(isArray([1,2,3]))
 // console.log(isArray(3))
@@ -40,6 +52,13 @@ function isObject(value) {
   return false;
 }
 
+//conver to es6
+
+const isObject = val => {
+  if(typeof val === 'object') return true;
+  return false;
+};
+
 //console.log(isObject([1,2,3]))
 
 // return boolean of whether argument is classified as null
@@ -52,7 +71,14 @@ function isNull(value) {
     return true;
   }
   return false;
-}
+};
+
+//convert to es6
+
+const isNull = val => {
+  if(!val) return true;
+  return false;
+};
 
 // console.log(isNull(null));
 // console.log(isNull(5));

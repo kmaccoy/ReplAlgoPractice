@@ -11,3 +11,9 @@
   // howManySeconds(10) //➞ 36000
   
   // howManySeconds(24) //➞ 86400
+
+  //convert to es6
+
+  const hourToSec = hour => {
+    return num * 60 * 60
+  };

@@ -16,5 +16,15 @@ function sum(array){
   return arraySum + sum(array);
 };
 
+//es6 conversion
+
+const sum = arr => {
+  if(arr.length === 1) return arr[0];
+
+  let arrSum = 0 + arr.shift();
+
+  return arrSum + sum(arr);
+};
+
 // console.log(sum([1,2,3,4,5,6])); //21
 // console.log(sum([2,4,6,8,10])); //30

@@ -34,6 +34,22 @@
     return isUnique.length;
   }
   
+  //convert to es6
+
+  const uniqueStyles = arr => {
+    const isUnique = []
+    for(let i = 0; i < arr.length; i++){
+      let splitStyles = arr[i].split(',')
+      for(let j = 0; j < splitStyles.length; j++){
+        if(isUnique.includes(splitStyles[j])){
+        } else {
+          isUnique.push(splitStyles[j])
+        }
+      }
+    }
+    //console.log(isUnique)
+    return isUnique.length;
+  }
   
   
   // //Examples

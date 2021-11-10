@@ -26,3 +26,10 @@
     // fibonacci(50) //➞ "12586269025"
     
     // fibonacci(60) //➞ "1548008755920"
+
+  //convert to es6
+
+  const nthfib = num => {
+    if(num <= 1) return 1;
+    return nthfib(num - 1) + nthfib(num - 2);
+  };

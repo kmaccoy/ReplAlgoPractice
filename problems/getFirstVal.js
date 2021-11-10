@@ -11,3 +11,11 @@
   // getFirstValue([80, 5, 100]) //➞ 80
   
   // getFirstValue([-500, 0, 50]) //➞ -500
+
+  //convert to es6
+
+  const getFirstVal = arr => {
+    return arr[0]
+  };
+
+  
